@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="card mt-3">
+      <div class="card-header">
+        <div class="float-start">
+          <h4>TO-DO-LIST</h4>
+        </div>
+        <div class="float-end">
+          <a type="button" class="btn btn-primary" (click)="openModal()">Novo Curso</a>
+          <button type="button" class="btn btn-secondary">Atualizar</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Titulo da tarefa</th>
+              <th>Descrição</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of list">
+              <td>{{item.id}}</td>
+              <td>{{item.title}}</td>
+              <td>{{item.description}}</td>
+              <td>
+                <span class="float-end">
+                  <button class="btn btn-outline-warning mb-1 btn-sm"(click)="edit(item.id)">
+                    Atualizar
+                  </button>
+                  <button class="btn btn-outline-danger mb-1 btn-sm" (click)="delete(item.id)">
+                    Remover
+                  </button>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>
+
+<!--Confirm modal-->
+<ng-template #deleteModal>
+  <div class="modal-body text-center">
+    <p>Quer realmente excluir essa tarefa?</p>
+    <button type="button" class="btn btn-primary" (click)="confirmeDelete()">Sim</button>
+    <button type="button" class="btn btn-primary" (click)="declineDelete()">Não</button>
+  </div>
+</ng-template>
+
+
+<!--FormModal-->
+<ng-template #template>
+  <app-add-task></app-add-task>
+</ng-template>

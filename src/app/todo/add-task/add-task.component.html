@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="form-controls" style="padding-top: 10px" [formGroup]="form">
+        <div class="form-row">
+          <div class="row">
+          <div class="col-sm-6">
+            <label for="nome">Qual tarefa?</label>
+            <input type="text" class="form-control" id="title" placeholder="titulo da tarefa" formControlName="title">
+          </div>
+          <div class="col-sm-6">
+            <label for="nome">Descrição da tarefa</label>
+            <input type="text" class="form-control" id="nome" placeholder="Descrição" formControlName="description">
+          </div>
+        </div>
+        </div>
+        <div class="form-buttons">
+          <button type="sumit" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+          <button type="button" class="btn btn-danger"(click)="onErase()">Apagar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
