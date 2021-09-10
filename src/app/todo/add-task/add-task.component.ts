@@ -39,9 +39,7 @@ export class AddTaskComponent implements OnInit {
       }
     }
   }
-  onErase(){
-    this.form.reset();
-  }
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const id = params['id'];
