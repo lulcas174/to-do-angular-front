@@ -25,10 +25,11 @@ export class AddTaskComponent implements OnInit {
   onRefresh() {
     window.location.reload();
     }
+    
   onSubmit() {
     if(this.form.valid){
       if(this.form.value.id){
-        this.service.PUT_API(this.form.value).subscribe(data => {
+        this.service.PUT_API(this.form.value).subscribe(success => {
           console.log('atualizou');
           this.location.back();
         })
